@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/weather.css">
+    
+    <title>Weather app</title>
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #efeaea;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  background: rgba(33, 33, 33, 0.621);
+  font-size: 2rem;
+  width: 35vw;
+  height: 80vh;
+  border-radius: 2rem;
+  font-weight: 400;
+}
+
+body .heigt {
+  height: 35vh;
+}
+
+body .app {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .up {
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body .up h1 {
+  font-weight: 300;
+  font-family: Berlin Sans FB;
+  width: 100%;
+  height: 50%;
+  text-transform: uppercase;
+  padding-top: 2rem;
+}
+
+body .up input {
+  background-color: rgba(24, 26, 29, 0.678);
+  margin-top: 3rem;
+  padding: 1.4rem 5rem;
+  border: none;
+  outline: none;
+  border-radius: 10rem;
+  color: #ffffff;
+  font-family: century gothic;
+  margin-top: 4rem;
+}
+
+body .center {
+  width: 100%;
+  height: 60%;
+}
+
+body .center #cityName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
+  font-size: 2rem;
+  padding: .4rem;
+  font-weight: 600;
+  padding-left: 4rem;
+  padding-top: 0rem;
+  width: 100%;
+  height: 15%;
+  font-family: Segoe UI;
+  text-transform: capitalize;
+}
+
+body .center #weather {
+  width: 100%;
+  height: 19%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3.5rem;
+  padding-left: 3.8rem;
+  font-family: Segoe UI;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 1rem;
+}
+
+body .center .himnety_for_weather {
+  font-family: Berlin Sans FB;
+  padding-top: 1.2rem;
+  padding-left: 3.8rem;
+}
+
+body .center .cloudy {
+  font-family: Berlin Sans FB;
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 3.5rem;
+}
+
+body .center #icon {
+  padding: 0rem .5rem;
+}
+
+@media (max-width: 806px) {
+  html {
+    font-size: 55%;
+  }
+  body .up h1 {
+    font-weight: 300;
+    width: 100%;
+    height: 50%;
+    text-transform: uppercase;
+    padding-top: 2.5rem;
+    font-size: 3.5rem;
+  }
+  body .box {
+    width: 65vw;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 52%;
+  }
+  body .up h1 {
+    font-weight: 300;
+    font-family: Berlin Sans FB;
+    width: 100%;
+    height: 50%;
+    text-transform: uppercase;
+    padding-left: 5.5rem;
+    font-size: 2.8rem;
+  }
+}
+/*# sourceMappingURL=weather.css.map */
+    </style>
+</head>
+<body id="body">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="tree "></div>
+    
+        <div class="box heigt" id="box_height">
+        <div class="app">
+            <div class="up">
+                <h1 id="h1">weather app</h1>
+                <input type="text" placeholder="Search City"  id="input" onkeyup="inpu(this.value)">
+            </div>
+            <div class="center">
+                <p id="cityName"> </p>
+                <h3 id="weather">    </h3>
+                 <p class="cloudy"><img width="50px" id="icon">  <span id="span"></span>  </p>
+                 <p class="himnety_for_weather" id="humidity"> </p>
+                 <p class="himnety_for_weather" id="wind"></p>
+                
+            </div>
+            <!-- <div class="dwon"></div> -->
+        </div>
+    </div>
+    <script>
+        let himnety = document.getElementById('humidity');
+        let h1 = document.getElementById('h1');
+        let wind = document.getElementById('wind');
+        let input = document.getElementById('input');
+        let city = document.getElementById('cityName');
+        let weather = document.getElementById('weather');
+        let body = document.getElementById('body');
+        let dgree = document.getElementById('dgree');
+        let icon = document.getElementById('icon');
+        let cldy = document.getElementById('span');
+        let box_height = document.getElementById('box_height');
+        
+
+        console.log(box_height)
+        function inpu(e){
+            // body.style.backgroundImage  =  "url('/m1.jpg')"
+            let valuee = '';
+            if(input.value == ''){
+                city.innerHTML = '';       
+                weather.innerHTML='';
+                icon.src = ``;
+                cldy.innerHTML= ``;  
+                box_height.classList.add('heigt')
+                himnety.innerHTML = ``;
+                wind.innerHTML = ``;
+                input.style.marginTop = '40px';
+                h1.style.paddingTop = '20px';
+            }else{
+                box_height.classList.remove('heigt')
+                
+                valuee = e;
+                async function fa(){
+                    try{
+                        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=19fb7916d65a1857f6526d069dd0badd`)
+                        let data = await response.json(); 
+                        return data; 
+                    }catch(er){
+                        console.log(`${er} this city is not exist in our app`);
+                    }
+                } 
+                fa().then((re)=>{
+                    let data = "";
+                    h1.style.paddingTop = '0px';
+                    input.style.marginTop = '0px';
+                    console.log(re);
+                    himnety.innerHTML = `Humidity ${re.main.humidity} %`;
+                    wind.innerHTML = `Wind: ${re.wind.speed} km/h`;
+                    // dgree.url=  src      
+                icon.src = `https://openweathermap.org/img/wn/${re.weather[0].icon}@2x.png`;           
+                city.innerHTML = "Weather in " + re.name;
+                weather.innerHTML = re.main.temp +" °C"  
+                cldy.innerHTML = re.weather[0].description;
+
+            })
+        }
+
+        }
+        // console.log(valuee)
+        
+    </script>
+</body>
+</html>

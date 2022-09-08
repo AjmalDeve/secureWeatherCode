@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+<title>this is project for todo</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .box_for_All{
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+
+    }
+    #btn{
+        width: 30px;
+        margin: 5px;
+    }
+    .style{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 341px;
+    height: 50px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    background-color: rgb(252, 174, 73);
+}
+.divforison{
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    width: 30%;
+    height: 100% ;
+}
+.p1s{
+    /* width: 60%; */
+    /* height: 8px; */
+    background-color: greenyellow;
+    color: aliceblue;
+    cursor: pointer;
+    margin: -10px;
+}
+.p2s{
+    background-color: red;
+    color: aliceblue;
+    cursor: pointer;
+    margin: 10px;
+    width: 40%;
+}
+.todos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+.op{
+    opacity: 0.6;
+    
+}
+
+</style>
+</head>
+
+<body>
+   <div class="box_for_All"> 
+        <div class="box_todo">
+            <input type="text" name="text" id="input" >
+            <button id="btn">+</button>
+        </div>
+        <div class="filter_todo">
+            <select name="value" id="select">
+                <option value="all" id="all">all</option>
+                <option value="comlete" id="comlete">comlete</option>
+                <option value="uncomlete" id="uncomlete">uncomlete</option>
+            </select>
+        </div>
+    </div>
+    <div class="todos" id="div_todo"> 
+
+    </div>
+<script>
+let btn = document.getElementById('btn');
+let input = document.getElementById('input');
+let div = document.getElementById('div_todo');
+let select = document.getElementById('select');
+// events
+btn.addEventListener('click', clickOnBtn)
+// select.addEventListener()
+// functions 
+
+function clickOnBtn(){
+    if(input.value == ''){
+        return
+    }else{
+        let makeToDo = document.createElement('div');
+        let makeC = makeToDo.className = 'style'
+let makeToh2 = document.createElement('h2');
+let divForIcons = document.createElement('div');
+let done = document.createElement('p')
+let deletIcon = document.createElement('p')
+let t2 = document.createTextNode('X');
+    divForIcons.className = 'divforison'
+    let t = document.createTextNode('Done');
+    done.append(t);
+    done.className = 'p1s';
+    // console.log(p)
+    divForIcons.append(done)
+    
+    deletIcon.append(t2);
+    deletIcon.className = 'p2s';
+    // console.log(deletIcon)
+    divForIcons.append(deletIcon)
+    
+    makeToDo.append(makeToh2);
+    makeToDo.append(divForIcons);
+    makeToh2.innerHTML = input.value;
+
+    div.append(makeToDo)
+
+    input.value = ''
+    done.addEventListener('click',()=>{
+        makeToDo.classList.add('op')
+        makeToh2.style.textDecoration = 'line-through'
+        console.log(makeToh2.attributes)    
+    })
+    
+    select.addEventListener('change',()=>{
+        if(select.value === 'all'){
+            makeToDo.style.display = 'flex';
+            
+            
+        }else if(select.value === 'comlete'){            
+            if(makeToh2.attributes){
+                makeToDo.style.display = 'flex';
+            }
+        }else if(select.value === 'uncomlete'){
+            if(!makeToh2.attributes){
+                makeToDo.style.display = 'flex';
+            }
+        }
+    })
+    deletIcon.addEventListener('click',()=>{
+        makeToDo.remove()
+    })
+    
+    }
+    
+    
+}
+
+</script>
+</body>

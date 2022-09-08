@@ -1,0 +1,26 @@
+[
+    {
+        "name":"parachiner",
+        "weather":"30"
+    },
+    {
+        "name":"sadda",
+        "weather":"20"
+    },
+    {
+        "name":"jallandr",
+        "weather":"10"
+    }, {
+        "name":"gosar",
+        "weather":"35"
+    }, {
+        "name":"kodki",
+        "weather":"5"
+    }, {
+        "name":"amlokot",
+        "weather":"15"
+    }, {
+        "name":"sameer",
+        "weather":"25"
+    }
+]

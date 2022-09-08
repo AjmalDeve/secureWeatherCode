@@ -1,0 +1,69 @@
+@import 'var';
+@import 'maxing';
+*{
+    padding: 0;
+    margin: 0;
+}
+.contaner{
+    // @include flex-center;
+    // @include flx-dariction(column);
+    width: 100vw;
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $bg-color;
+    color: $font-color;
+    h1{
+        width: 40%;
+        font-size: 25px + 5px;
+        text-transform: capitalize;
+        &:hover{
+            color: aqua;
+        }
+    }
+    .paraLeft{
+        background-color: aqua;
+        width: 30%;
+        opacity: 0;
+        transition: all 2.5s ease;
+        margin-left: -60px;
+    }
+    
+    
+    .paraRight{
+        background-color: aqua;
+        opacity: 0;
+        width: 30%;
+        transition: all 2.5s ease;
+        margin-right: -60px;
+
+    }
+    p{
+        text-transform: capitalize;
+        &:hover{
+            color: aqua;
+        }
+    }
+    .dn1{
+        opacity: 1;
+        margin-left: 60px;   
+    }
+    .dn2{
+        opacity: 1;
+        margin-right: 60px;   
+    }
+}
+.cons{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: aliceblue;
+    opacity: 0;
+    margin-top: 40px;
+    transition: all 2.5s ease;
+}
+.aime{
+    opacity: 1;
+    margin-top: -40px;
+}

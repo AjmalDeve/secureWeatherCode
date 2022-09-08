@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sax.css">
+    <title></title>
+</head>
+<body>
+    <div class="contaner" id="ont"> 
+        <div class="paraLeft" id="don1">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum asperiores expedita placeat deleniti ipsam id perferendis quas dicta nesciunt quod repellat ad, mollitia hic soluta nam tenetur inventore labore est.
+        </div>       
+        <p>this paragrap</p>
+        <div class="paraRight" id="don2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reiciendis possimus pariatur, temporibus ullam nisi repellat, inventore ipsum hic expedita, tempora quam odio ducimus. Nisi eius </div>       
+    </div>
+    <div class="cons" id="cont">        
+        <p>this paragrap Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident veniam incidunt hic, voluptatem tempora illo. Eum harum laboriosam iusto rem, in non. Sapiente obcaecati expedita eveniet cum, at quasi Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem alias voluptate optio facere voluptates autem rem minima magnam! Delectus ipsa vel at aut cum nesciunt non perspiciatis tempora earum architecto. </temporibus></p>
+    </div>
+    <script>
+        let contaner = document.getElementById('cont');
+        let contaner2 = document.getElementById('ont');
+        let don1 = document.getElementById('don1');
+        let don2 = document.getElementById('don2');
+        
+        let don1ani = new IntersectionObserver((enterr1,observe1)=>{
+            let [enter1]=enterr1;
+            if(!enter1.isIntersecting){
+                don1.classList.remove('dn1')
+            }else{
+                don1.classList.add('dn1')
+
+            }
+        },{
+            root:null,
+            threshold:0,
+        } )       
+        don1ani.observe(don1)
+                
+        let don2ani = new IntersectionObserver((enterr2,observe2)=>{
+            let [enter2]=enterr2;
+            if(!enter2.isIntersecting){
+                don2.classList.remove('dn2')
+            }else{
+                don2.classList.add('dn2')
+
+            }
+        },{
+            root:null,
+            threshold:0,
+        } )       
+        don2ani.observe(don2)
+        
+        let anim = new IntersectionObserver((enteris,observer)=>{
+            let [entry]=enteris;
+            console.log(enteris)
+            if(!entry.isIntersecting){
+
+                contaner.classList.remove('aime')
+            }else{
+                contaner.classList.add('aime')
+            }
+        },{
+            root:null,
+            threshold:0,
+        })
+        anim.observe(contaner);
+
+        let anim2 = new IntersectionObserver(()=>{
+
+        },{
+            root:null,
+            threshold:0,
+        })
+        anim2.observe(contaner2)
+    </script>
+</body>
+</html>

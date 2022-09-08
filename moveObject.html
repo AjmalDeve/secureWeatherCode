@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            /* position: ; */
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="obj"></div>
+</body>
+<script>
+    let ob = document.getElementById('obj');
+    let moveby = 10;
+    window.addEventListener('load',()=>{
+        ob.style.position = 'absolute';
+        ob.style.top = 0;
+        ob.style.left = 0;
+    })
+    window.addEventListener("keyup",(e)=>{
+        // console.log(e)                                        
+        switch(e.key){
+            case 'ArrowLeft':
+            ob.style.left = parseInt(ob.style.left) - moveby + 'px';
+            break;
+            case 'ArrowRight':
+            ob.style.left = parseInt(ob.style.left) + moveby + 'px';
+            break;
+            case 'ArrowUp':
+            ob.style.top = parseInt(ob.style.top) - moveby + 'px';
+            break;
+            case 'ArrowDown':
+            ob.style.top = parseInt(ob.style.top) + moveby + 'px';
+            break;
+        }
+    })
+</script>
+</html>
